@@ -1,3 +1,5 @@
+console.log('%c🤨🤨', 'font-size: 100px;');
+
 var colour="random"; // "random" can be replaced with any valid colour ie: "red"...
 var sparkles=100;// increase of decrease for number of sparkles falling
 
@@ -257,4 +259,50 @@ function newColour() {
 	c.sort(function(){return (0.5 - Math.random());});
 	return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
 }
-// ]]>
+
+setInterval(function() {
+	document.body.style.backgroundColor = 'white';
+	setTimeout(function() {
+	  document.body.style.backgroundColor = 'black';
+	}, 100);
+  }, 4500);
+
+setInterval(function() {
+	document.body.style.transform = 'translate(0px, 0px)';
+	setTimeout(function() {
+	  document.body.style.transform = 'translate(10px, 10px)';
+	}, 100);
+	setTimeout(function() {
+	  document.body.style.transform = 'translate(-10px, -10px)';
+	}, 200);
+	setTimeout(function() {
+	  document.body.style.transform = 'translate(10px, -10px)';
+	}, 300);
+	setTimeout(function() {
+	  document.body.style.transform = 'translate(-10px, 10px)';
+	}, 400);
+	setTimeout(function() {
+	  document.body.style.transform = 'translate(0px, 0px)';
+	}, 500);
+  }, 3000);
+
+  var cyber = document.createElement('div');
+  cyber.innerHTML = 'click me';
+  cyber.style.fontFamily = 'Comic Sans MS';
+  // set opacity to 0
+  cyber.style.opacity = 0.2;
+  cyber.style.color = 'white';
+  cyber.style.position = 'absolute';
+  cyber.style.top = '0px';
+  cyber.style.left = '0px';
+  document.body.appendChild(cyber);
+  var cyberMove = function() {
+	var x = Math.floor(Math.random() * window.innerWidth);
+	var y = Math.floor(Math.random() * window.innerHeight);
+	cyber.style.top = y + 'px';
+	cyber.style.left = x + 'px';
+  };
+  setInterval(cyberMove, 700);
+  cyber.addEventListener('click', function() {
+	window.location.href = 'https://youtu.be/dQw4w9WgXcQ';
+  });
